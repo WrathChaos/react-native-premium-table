@@ -36,7 +36,7 @@ npm i react-native-premium-table
 ## Import
 
 ```jsx
-import PremiumTable from "react-native-premium-table";
+import PremiumTable, { Item } from "react-native-premium-table";
 ```
 
 ## Fundamental Usage
