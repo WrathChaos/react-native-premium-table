@@ -12,7 +12,7 @@
 
 <p align="center">
   <img alt="React Native Premium Table"
-        src="assets/Screenshots/react-native-premium-table.png" />
+        src="assets/Screenshots/react-native-premium-table.png" height="850" />
 </p>
 
 # Installation
