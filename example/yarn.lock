@@ -5602,12 +5602,17 @@
     "jscodeshift" "^0.11.0"
     "nullthrows" "^1.1.1"
 
-"react-native-easy-grid@^0.2.2":
+"react-native-easy-grid@^0.2.2", "react-native-easy-grid@>= 0.2.2":
   "integrity" "sha512-MlYrNIldnEMKn6TVatQN1P64GoVlwGIuz+8ncdfJ0Wq/xtzUkQwlil8Uksyp7MhKfENE09MQnGNcba6Mx3oSAA=="
   "resolved" "https://registry.npmjs.org/react-native-easy-grid/-/react-native-easy-grid-0.2.2.tgz"
   "version" "0.2.2"
   dependencies:
     "lodash" "^4.17.15"
+
+"react-native-premium-table@^0.1.0":
+  "integrity" "sha512-I+eTrzjdEESVFE4KpmURE6ldq6Rl514JvR0LKUejMCPTYaQu+3xnZqrfMcmMr0Yli1fw6NyDHaNCF+szWNQt2A=="
+  "resolved" "https://registry.npmjs.org/react-native-premium-table/-/react-native-premium-table-0.1.0.tgz"
+  "version" "0.1.0"
 
 "react-native@*", "react-native@0.67.4":
   "integrity" "sha512-NA9d9lNJu9TViEJu2uZxWXUP+QNUilGGA5tdMbVFedNroOH1lnQ3n/FAVoGK1gqGarCgNTtheBxUpEa979Cu8w=="

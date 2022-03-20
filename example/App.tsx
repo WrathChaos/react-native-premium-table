@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, SafeAreaView } from "react-native";
-import PremiumTable from "./lib/PremiumTable";
+import PremiumTable from "react-native-premium-table";
 
 const mockData = [
   {
