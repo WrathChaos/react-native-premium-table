@@ -17,28 +17,46 @@ export interface Item {
 
 interface IPremiumTableProps {
   style?: CustomStyleProp;
+  headerStyle: CustomStyleProp;
   data: Item[];
+  basicText?: string;
+  premiumText?: string;
 }
 
-const PremiumTable: React.FC<IPremiumTableProps> = ({ style, data }) => {
+const PremiumTable: React.FC<IPremiumTableProps> = ({
+  style,
+  data,
+  basicText = "Basic",
+  premiumText = "Premium",
+  headerStyle,
+  ...rest
+}) => {
+  const renderHeader = () => (
+    <Grid style={[styles.headerStyle, headerStyle]}>
+      <Row style={styles.headerGlueStyle}>
+        <Col size={2.7} />
+        <Col>
+          <Text style={styles.colTitleTextStyle}>{basicText}</Text>
+        </Col>
+        <Col>
+          <Text style={styles.colTitleTextStyle}>{premiumText}</Text>
+        </Col>
+      </Row>
+    </Grid>
+  );
+
+  const renderList = () => (
+    <FlatList
+      data={data}
+      style={styles.listStyle}
+      renderItem={({ item }) => <PremiumItem data={item} {...rest} />}
+    />
+  );
+
   return (
     <View style={[styles.container, style]}>
-      <Grid style={{ marginTop: 12 }}>
-        <Row style={{ height: 20 }}>
-          <Col size={2.5} />
-          <Col>
-            <Text style={styles.colTitleTextStyle}>Basic</Text>
-          </Col>
-          <Col>
-            <Text style={styles.colTitleTextStyle}>Premium</Text>
-          </Col>
-        </Row>
-      </Grid>
-      <FlatList
-        data={data}
-        style={styles.listStyle}
-        renderItem={({ item }) => <PremiumItem data={item} />}
-      />
+      {renderHeader()}
+      {renderList()}
     </View>
   );
 };

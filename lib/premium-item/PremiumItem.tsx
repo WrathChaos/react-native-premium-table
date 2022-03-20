@@ -7,6 +7,7 @@ import {
   ViewStyle,
   ImageSourcePropType,
   Alert,
+  ImageStyle,
 } from "react-native";
 import { Grid, Col, Row } from "react-native-easy-grid";
 /**
@@ -19,9 +20,14 @@ import CheckImg from "./../local-assets/check.png";
 import LockImg from "./../local-assets/lock.png";
 
 type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
+type CustomImageStyleProp =
+  | StyleProp<ImageStyle>
+  | Array<StyleProp<ImageStyle>>;
 
 interface IPremiumItemProps {
   style?: CustomStyleProp;
+  checkCircleStyle?: CustomStyleProp;
+  iconImageStyle?: CustomImageStyleProp;
   checkImageSource?: ImageSourcePropType;
   lockImageSource?: ImageSourcePropType;
   data: Item;
@@ -32,43 +38,29 @@ const PremiumItem: React.FC<IPremiumItemProps> = ({
   data,
   checkImageSource = CheckImg,
   lockImageSource = LockImg,
+  checkCircleStyle,
+  iconImageStyle,
 }) => {
   const { name, isBasic, isPremium } = data;
 
   const renderCheckCircle = () => (
     <Col size={1.5}>
-      <View
-        style={{
-          width: 25,
-          height: 25,
-          marginTop: 16,
-          borderRadius: 25,
-          alignSelf: "center",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#0288fa",
-        }}
-      >
-        <Image source={checkImageSource} style={styles.iconImageStyle} />
+      <View style={[styles.checkCircleStyle, checkCircleStyle]}>
+        <Image
+          source={checkImageSource}
+          style={[styles.iconImageStyle, iconImageStyle]}
+        />
       </View>
     </Col>
   );
 
   const renderLockCircle = () => (
     <Col size={1.5}>
-      <View
-        style={{
-          width: 25,
-          height: 25,
-          marginTop: 16,
-          borderRadius: 25,
-          alignSelf: "center",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#fe2951",
-        }}
-      >
-        <Image source={lockImageSource} style={styles.iconImageStyle} />
+      <View style={styles.lockCircleStyle}>
+        <Image
+          source={lockImageSource}
+          style={[styles.iconImageStyle, iconImageStyle]}
+        />
       </View>
     </Col>
   );
@@ -81,14 +73,8 @@ const PremiumItem: React.FC<IPremiumItemProps> = ({
 
   return (
     <Grid>
-      <Row style={{ height: 45 }}>
-        <Col
-          size={3}
-          style={{
-            bottom: 5,
-            justifyContent: "flex-end",
-          }}
-        >
+      <Row style={[styles.container, style]}>
+        <Col size={3} style={styles.nameTextContainer}>
           <Text style={styles.itemTextStyle}>{name}</Text>
         </Col>
         {renderBasicCircle()}
