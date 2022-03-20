@@ -5,7 +5,6 @@ interface Style {
   headerStyle: ViewStyle;
   headerGlueStyle: ViewStyle;
   colTitleTextStyle: TextStyle;
-  listStyle: ViewStyle;
 }
 
 export default StyleSheet.create<Style>({
@@ -21,8 +20,5 @@ export default StyleSheet.create<Style>({
   colTitleTextStyle: {
     color: "#fff",
     fontWeight: "bold",
-  },
-  listStyle: {
-    marginTop: 16,
   },
 });

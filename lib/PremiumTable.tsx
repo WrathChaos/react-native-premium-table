@@ -48,7 +48,6 @@ const PremiumTable: React.FC<IPremiumTableProps> = ({
   const renderList = () => (
     <FlatList
       data={data}
-      style={styles.listStyle}
       renderItem={({ item }) => <PremiumItem data={item} {...rest} />}
     />
   );
