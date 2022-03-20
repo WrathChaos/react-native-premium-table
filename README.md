@@ -1,49 +1,26 @@
-<img alt="React Native Typescript Library Starter" src="assets/logo.png" width="1050"/>
+<img alt="React Native Premium Table" src="assets/logo.png" width="1050"/>
 
-[![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/react-native-typescript-library-starter)
+[![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/react-native-premium-table)
 
-[![React Native Typescript Library Starter](https://img.shields.io/badge/-Extremely%20easy%20to%20create%20a%20React%20Native%20Component%20Library%20with%20both%20Stateful%20and%20Functional%20Component%20Examples-orange?style=for-the-badge)](https://github.com/WrathChaos/react-native-typescript-library-starter)
+[![React Native Premium Table](https://img.shields.io/badge/-Extremely%20easy%20to%20create%20a%20React%20Native%20Component%20Library%20with%20both%20Stateful%20and%20Functional%20Component%20Examples-orange?style=for-the-badge)](https://github.com/WrathChaos/react-native-premium-table)
 
-[![npm version](https://img.shields.io/npm/v/react-native-typescript-library-starter.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-typescript-library-starter)
-[![npm](https://img.shields.io/npm/dt/react-native-typescript-library-starter.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-typescript-library-starter)
+[![npm version](https://img.shields.io/npm/v/react-native-premium-table.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-premium-table)
+[![npm](https://img.shields.io/npm/dt/react-native-premium-table.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-premium-table)
 ![Platform - Android and iOS](https://img.shields.io/badge/platform-Android%20%7C%20iOS-blue.svg?style=for-the-badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=for-the-badge)](https://github.com/prettier/prettier)
 
 <p align="center">
-  <img alt="React Native Typescript Library Starter"
-        src="assets/Screenshots/typescript.jpg" />
+  <img alt="React Native Premium Table"
+        src="assets/Screenshots/react-native-premium-table.jpg" />
 </p>
-
-## Library Usage
-
-- `npm i`
-- `npm run husky:setup`
-- Delete example folder
-- Delete build folder
-- Make your own library into the `lib` folder
-- Change package.json
-- Change README for your own documentation
-- `npm run build`
-
-```
-> react-native-typescript-library-starter@0.1.0 build /Users/kuray/Coursion/MyLibraries/ReactNative/react-native-typescript-library-starter
-> cd lib && tsc && cp ../package.json ../build/dist/ && Echo Build completed!
-
-Build completed!
-```
-
-- Test your build/dist into the new project
-- Finally, time to npm publish :)
-
-### Below part is for Documentation ! Remove above Library Usage
 
 # Installation
 
 Add the dependency:
 
 ```bash
-npm i react-native-typescript-library-starter
+npm i react-native-premium-table
 ```
 
 ## Peer Dependencies
@@ -51,8 +28,7 @@ npm i react-native-typescript-library-starter
 <h5><i>IMPORTANT! You need install them</i></h5>
 
 ```js
-"react": ">= 16.x.x",
-"react-native": ">= 0.55.x",
+"react-native-easy-grid": ">= 0.2.2"
 ```
 
 # Usage
@@ -60,13 +36,65 @@ npm i react-native-typescript-library-starter
 ## Import
 
 ```jsx
-import MyComponent from "react-native-typescript-library-starter";
+import PremiumTable from "react-native-premium-table";
 ```
 
 ## Fundamental Usage
 
 ```jsx
-<MyComponent />
+<PremiumTable data={mockData} />
+```
+
+## Data Format
+
+```js
+const mockData = [
+  {
+    name: "Data Sync",
+    isBasic: true,
+    isPremium: true,
+  },
+  {
+    name: "Offline Usage",
+    isBasic: true,
+    isPremium: true,
+  },
+  {
+    name: "Share with Friends",
+    isBasic: true,
+    isPremium: true,
+  },
+  {
+    name: "Unlimited Items",
+    isBasic: false,
+    isPremium: true,
+  },
+  {
+    name: "Unlimited Lists",
+    isBasic: false,
+    isPremium: true,
+  },
+  {
+    name: "Insight",
+    isBasic: false,
+    isPremium: true,
+  },
+  {
+    name: "Custom App Icons",
+    isBasic: false,
+    isPremium: true,
+  },
+  {
+    name: "Historical Access",
+    isBasic: false,
+    isPremium: true,
+  },
+  {
+    name: "Priority Support",
+    isBasic: false,
+    isPremium: true,
+  },
+];
 ```
 
 ## Example Project 😍
@@ -84,30 +112,27 @@ should work of the example project.
 
 ## Fundamentals
 
-| Property    |  Type  |  Default  | Description           |
-| ----------- | :----: | :-------: | --------------------- |
-| title       | string | undefined | change the title      |
-| description | string | undefined | change the descrition |
+| Property |  Type  |  Default  | Description            |
+| -------- | :----: | :-------: | ---------------------- |
+| data     | Item[] | undefined | set the formatted data |
 
 ## Customization (Optionals)
 
-| Property       |   Type    |  Default  | Description                                                            |
-| -------------- | :-------: | :-------: | ---------------------------------------------------------------------- |
-| enableButton   |  boolean  |   false   | let you enable the button (must use it for button)                     |
-| onPress        | function  | undefined | set your own logic for the button functionality when it is pressed     |
-| buttonText     |  string   | undefined | change the button's text                                               |
-| style          | ViewStyle |  default  | set or override the style object for the main container                |
-| buttonStyle    | ViewStyle |  default  | set or override the style object for the button style                  |
-| ImageComponent |   Image   |  default  | set your own component instead of default react-native Image component |
+| Property         |        Type         |  Default  | Description                                               |
+| ---------------- | :-----------------: | :-------: | --------------------------------------------------------- |
+| style            |      ViewStyle      |  default  | set or override the style object for the `main container` |
+| headerStyle      |      ViewStyle      |  default  | set or override the style object for the `header`         |
+| basicText        |       string        |  "Basic"  | change the basic column's text                            |
+| premiumText      |       string        | "Premium" | change the premium column's text                          |
+| checkCircleStyle |      ViewStyle      |  default  | set or override the style object for the `check` circle   |
+| iconImageStyle   |     ImageStyle      |  default  | set or override the style object for the `icon` image     |
+| checkImageSource | ImageSourcePropType |  default  | set your own `check` image                                |
+| lockImageSource  | ImageSourcePropType |  default  | set your own `lock` image                                 |
 
 ## Future Plans
 
 - [x] ~~LICENSE~~
 - [ ] Write an article about the lib on Medium
-
-# Change Log
-
-Change log will be here !
 
 ## Author
 
@@ -115,4 +140,4 @@ FreakyCoder, kurayogun@gmail.com
 
 ## License
 
-React Native Typescript Library Starter is available under the MIT license. See the LICENSE file for more info.
+React Native Premium Table is available under the MIT license. See the LICENSE file for more info.

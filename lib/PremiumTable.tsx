@@ -17,7 +17,7 @@ export interface Item {
 
 interface IPremiumTableProps {
   style?: CustomStyleProp;
-  headerStyle: CustomStyleProp;
+  headerStyle?: CustomStyleProp;
   data: Item[];
   basicText?: string;
   premiumText?: string;

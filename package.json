@@ -1,14 +1,17 @@
 {
-  "name": "react-native-typescript-library-starter",
-  "version": "1.2.0",
-  "description": "Extremely easy to create a React Native Component Library with both Stateful and Functional Component Examples.",
-  "main": "./build/dist/index.js",
-  "repository": "git@github.com:WrathChaos/react-native-typescript-library-starter.git",
+  "name": "react-native-premium-table",
+  "version": "0.1.0",
+  "description": "Fully customizable, easy to use premium table for React Native",
+  "main": "./build/dist/PremiumTable.js",
+  "repository": "git@github.com:WrathChaos/react-native-premium-table.git",
   "author": "FreakyCoder <kurayogun@gmail.com>",
   "license": "MIT",
   "homepage": "https://www.freakycoder.com",
-  "bugs": "https://github.com/WrathChaos/react-native-typescript-library-starter/issues",
+  "bugs": "https://github.com/WrathChaos/react-native-premium-table/issues",
   "keywords": [
+    "premium",
+    "table",
+    "premium-table",
     "FreakyCoder",
     "freakycoder",
     "kuray",
@@ -20,8 +23,7 @@
     "rn"
   ],
   "peerDependencies": {
-    "react": ">= 16.x.x",
-    "react-native": ">=0.63.x"
+    "react-native-easy-grid": ">= 0.2.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
