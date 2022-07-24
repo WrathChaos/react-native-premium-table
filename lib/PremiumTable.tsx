@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, FlatList, StyleProp, ViewStyle } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  StyleProp,
+  ViewStyle,
+  TextStyle,
+} from "react-native";
 import { Grid, Col, Row } from "react-native-easy-grid";
 import PremiumItem from "./premium-item/PremiumItem";
 /**
@@ -8,6 +15,7 @@ import PremiumItem from "./premium-item/PremiumItem";
 import styles from "./PremiumTable.style";
 
 type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
+type CustomTitleStyleProp = StyleProp<TextStyle> | Array<StyleProp<TextStyle>>;
 
 export interface Item {
   name: string;
@@ -18,6 +26,8 @@ export interface Item {
 interface IPremiumTableProps {
   style?: CustomStyleProp;
   headerStyle?: CustomStyleProp;
+  titleTextStyle?: CustomTitleStyleProp;
+  itemTextStyle?: CustomTitleStyleProp;
   data: Item[];
   basicText?: string;
   premiumText?: string;
@@ -28,6 +38,8 @@ const PremiumTable: React.FC<IPremiumTableProps> = ({
   data,
   basicText = "Basic",
   premiumText = "Premium",
+  titleTextStyle,
+  itemTextStyle,
   headerStyle,
   ...rest
 }) => {
@@ -36,10 +48,14 @@ const PremiumTable: React.FC<IPremiumTableProps> = ({
       <Row style={styles.headerGlueStyle}>
         <Col size={2.7} />
         <Col>
-          <Text style={styles.colTitleTextStyle}>{basicText}</Text>
+          <Text style={[styles.colTitleTextStyle, titleTextStyle]}>
+            {basicText}
+          </Text>
         </Col>
         <Col>
-          <Text style={styles.colTitleTextStyle}>{premiumText}</Text>
+          <Text style={[styles.colTitleTextStyle, titleTextStyle]}>
+            {premiumText}
+          </Text>
         </Col>
       </Row>
     </Grid>
@@ -48,7 +64,9 @@ const PremiumTable: React.FC<IPremiumTableProps> = ({
   const renderList = () => (
     <FlatList
       data={data}
-      renderItem={({ item }) => <PremiumItem data={item} {...rest} />}
+      renderItem={({ item }) => (
+        <PremiumItem data={item} itemTextStyle={itemTextStyle} {...rest} />
+      )}
     />
   );
 

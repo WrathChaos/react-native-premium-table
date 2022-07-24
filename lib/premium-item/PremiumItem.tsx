@@ -5,9 +5,9 @@ import {
   Image,
   StyleProp,
   ViewStyle,
-  ImageSourcePropType,
-  Alert,
+  TextStyle,
   ImageStyle,
+  ImageSourcePropType,
 } from "react-native";
 import { Grid, Col, Row } from "react-native-easy-grid";
 /**
@@ -20,6 +20,7 @@ import CheckImg from "./../local-assets/check.png";
 import LockImg from "./../local-assets/lock.png";
 
 type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
+type CustomTitleStyleProp = StyleProp<TextStyle> | Array<StyleProp<TextStyle>>;
 type CustomImageStyleProp =
   | StyleProp<ImageStyle>
   | Array<StyleProp<ImageStyle>>;
@@ -29,6 +30,7 @@ interface IPremiumItemProps {
   checkCircleStyle?: CustomStyleProp;
   iconImageStyle?: CustomImageStyleProp;
   checkImageSource?: ImageSourcePropType;
+  itemTextStyle?: CustomTitleStyleProp;
   lockImageSource?: ImageSourcePropType;
   data: Item;
 }
@@ -39,6 +41,7 @@ const PremiumItem: React.FC<IPremiumItemProps> = ({
   checkImageSource = CheckImg,
   lockImageSource = LockImg,
   checkCircleStyle,
+  itemTextStyle,
   iconImageStyle,
 }) => {
   const { name, isBasic, isPremium } = data;
@@ -75,7 +78,7 @@ const PremiumItem: React.FC<IPremiumItemProps> = ({
     <Grid>
       <Row style={[styles.container, style]}>
         <Col size={3} style={styles.nameTextContainer}>
-          <Text style={styles.itemTextStyle}>{name}</Text>
+          <Text style={[styles.itemTextStyle, itemTextStyle]}>{name}</Text>
         </Col>
         {renderBasicCircle()}
         {renderPremiumCricle()}

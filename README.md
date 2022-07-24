@@ -126,6 +126,8 @@ should work of the example project.
 | premiumText      |       string        | "Premium" | change the premium column's text                          |
 | checkCircleStyle |      ViewStyle      |  default  | set or override the style object for the `check` circle   |
 | iconImageStyle   |     ImageStyle      |  default  | set or override the style object for the `icon` image     |
+| titleTextStyle   |      TextStyle      |  default  | set or override the style object for the `title` text     |
+| itemTextStyle    |      TextStyle      |  default  | set or override the style object for the `item` text      |
 | checkImageSource | ImageSourcePropType |  default  | set your own `check` image                                |
 | lockImageSource  | ImageSourcePropType |  default  | set your own `lock` image                                 |
 
