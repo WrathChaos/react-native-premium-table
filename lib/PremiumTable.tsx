@@ -21,6 +21,7 @@ export interface Item {
   name: string;
   isBasic: boolean;
   isPremium: boolean;
+  children?: React.ReactNode | React.ReactNode[];
 }
 
 interface IPremiumTableProps {

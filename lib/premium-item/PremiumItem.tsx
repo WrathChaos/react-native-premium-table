@@ -44,7 +44,7 @@ const PremiumItem: React.FC<IPremiumItemProps> = ({
   itemTextStyle,
   iconImageStyle,
 }) => {
-  const { name, isBasic, isPremium } = data;
+  const { name, isBasic, isPremium, children } = data;
 
   const renderCheckCircle = () => (
     <Col size={1.5}>
@@ -79,6 +79,7 @@ const PremiumItem: React.FC<IPremiumItemProps> = ({
       <Row style={[styles.container, style]}>
         <Col size={3} style={styles.nameTextContainer}>
           <Text style={[styles.itemTextStyle, itemTextStyle]}>{name}</Text>
+          {children}
         </Col>
         {renderBasicCircle()}
         {renderPremiumCricle()}
