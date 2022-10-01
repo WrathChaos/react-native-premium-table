@@ -5759,10 +5759,10 @@
   "resolved" "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.0.7.tgz"
   "version" "0.0.7"
 
-"react-native-premium-table@^0.1.2":
-  "integrity" "sha512-WyOY7DugSl2WpbZFN1cNHJ2WnXK9/pKoPqLRsIQGFZXE+5lJZnIAHYE6HagY86FuMqT+Dt1dffxlf9X1X+S7+w=="
-  "resolved" "https://registry.npmjs.org/react-native-premium-table/-/react-native-premium-table-0.1.2.tgz"
-  "version" "0.1.2"
+"react-native-premium-table@^0.1.3":
+  "integrity" "sha512-kVLfegREp2qgLF7NThGTXuhB8uaB0O4nrp70t+IDvTE5hQjIBfX/p2GH89bTwzNJeidhoxzeF62AJ9QghkNnhg=="
+  "resolved" "https://registry.npmjs.org/react-native-premium-table/-/react-native-premium-table-0.1.3.tgz"
+  "version" "0.1.3"
 
 "react-native@*", "react-native@0.69.3":
   "integrity" "sha512-SyGkcoEUa/BkO+wKVnv4OsnLSNfUM5zLNXS3iT/3eXjKX91/FKBH/nfR9BE1c60X5LQe/P5QYqr6WPX3TRSQkA=="

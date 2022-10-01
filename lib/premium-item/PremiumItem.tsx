@@ -33,6 +33,8 @@ interface IPremiumItemProps {
   itemTextStyle?: CustomTitleStyleProp;
   lockImageSource?: ImageSourcePropType;
   data: Item;
+  numberOfLines?: number;
+  adjustsFontSizeToFit?: boolean;
 }
 
 const PremiumItem: React.FC<IPremiumItemProps> = ({
@@ -43,6 +45,8 @@ const PremiumItem: React.FC<IPremiumItemProps> = ({
   checkCircleStyle,
   itemTextStyle,
   iconImageStyle,
+  numberOfLines = 2,
+  adjustsFontSizeToFit = true,
 }) => {
   const { name, isBasic, isPremium, children } = data;
 
@@ -71,18 +75,24 @@ const PremiumItem: React.FC<IPremiumItemProps> = ({
   const renderBasicCircle = () =>
     isBasic ? renderCheckCircle() : renderLockCircle();
 
-  const renderPremiumCricle = () =>
+  const renderPremiumCircle = () =>
     isPremium ? renderCheckCircle() : renderLockCircle();
 
   return (
     <Grid>
       <Row style={[styles.container, style]}>
         <Col size={3} style={styles.nameTextContainer}>
-          <Text style={[styles.itemTextStyle, itemTextStyle]}>{name}</Text>
+          <Text
+            adjustsFontSizeToFit={adjustsFontSizeToFit}
+            numberOfLines={numberOfLines}
+            style={[styles.itemTextStyle, itemTextStyle]}
+          >
+            {name}
+          </Text>
           {children}
         </Col>
         {renderBasicCircle()}
-        {renderPremiumCricle()}
+        {renderPremiumCircle()}
       </Row>
     </Grid>
   );

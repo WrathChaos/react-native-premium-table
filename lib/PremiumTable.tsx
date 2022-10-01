@@ -32,6 +32,8 @@ interface IPremiumTableProps {
   data: Item[];
   basicText?: string;
   premiumText?: string;
+  adjustsFontSizeToFit?: boolean;
+  numberOfLines?: number;
 }
 
 const PremiumTable: React.FC<IPremiumTableProps> = ({
