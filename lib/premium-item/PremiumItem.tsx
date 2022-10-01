@@ -33,6 +33,8 @@ interface IPremiumItemProps {
   itemTextStyle?: CustomTitleStyleProp;
   lockImageSource?: ImageSourcePropType;
   data: Item;
+  numberOfLines?: number;
+  adjustsFontSizeToFit?: boolean;
 }
 
 const PremiumItem: React.FC<IPremiumItemProps> = ({
@@ -43,6 +45,8 @@ const PremiumItem: React.FC<IPremiumItemProps> = ({
   checkCircleStyle,
   itemTextStyle,
   iconImageStyle,
+  numberOfLines = 2,
+  adjustsFontSizeToFit = true,
 }) => {
   const { name, isBasic, isPremium, children } = data;
 
@@ -79,8 +83,8 @@ const PremiumItem: React.FC<IPremiumItemProps> = ({
       <Row style={[styles.container, style]}>
         <Col size={3} style={styles.nameTextContainer}>
           <Text
-            adjustsFontSizeToFit
-            numberOfLines={2}
+            adjustsFontSizeToFit={adjustsFontSizeToFit}
+            numberOfLines={numberOfLines}
             style={[styles.itemTextStyle, itemTextStyle]}
           >
             {name}
